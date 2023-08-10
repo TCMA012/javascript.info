@@ -1,0 +1,26 @@
+valueAsNumber valueAsDate
+The valueAsNumber provides the value of an input[type=number] as a Number type, instead of the traditional string representation when you get the value:
+Website performance monitoring
+
+/*
+ Assuming an <input type="number" value="1.234" />
+*/
+
+// BAD: Get the value and convert the number
+input.value // "1.234"
+const numberValue = parseFloat(input.value, 10);
+
+// GOOD: Use valueAsNumber
+input.valueAsNumber // 1.234
+
+
+
+<input
+      type="date"
+      value={date}
+      onChange={(e) => {
+        // ✅
+        const date = e.target.valueAsDate
+        setDate(date)
+      }}
+/>
